@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C2F8F7922B28AA100D79CFB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F8F7822B28AA100D79CFB /* Person.swift */; };
+		8C2F8F7A22B28AA100D79CFB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F8F7822B28AA100D79CFB /* Person.swift */; };
 		8CF8736E22608B7000208113 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8736D22608B7000208113 /* AppDelegate.swift */; };
 		8CF8737022608B7000208113 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8736F22608B7000208113 /* ViewController.swift */; };
 		8CF8737322608B7000208113 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF8737122608B7000208113 /* Main.storyboard */; };
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C2F8F7822B28AA100D79CFB /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		8CF8736A22608B7000208113 /* TestPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF8736D22608B7000208113 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CF8736F22608B7000208113 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 				8CF8737622608B7200208113 /* LaunchScreen.storyboard */,
 				8CF8737922608B7200208113 /* Info.plist */,
 				8CF8739B22608F5A00208113 /* SomeObject.swift */,
+				8C2F8F7822B28AA100D79CFB /* Person.swift */,
 			);
 			path = TestPlayground;
 			sourceTree = "<group>";
@@ -200,7 +204,6 @@
 					};
 					8CF8737D22608B7200208113 = {
 						CreatedOnToolsVersion = 10.2;
-						TestTargetID = 8CF8736922608B7000208113;
 					};
 					8CF8738822608B7200208113 = {
 						CreatedOnToolsVersion = 10.2;
@@ -262,6 +265,7 @@
 			files = (
 				8CF8739C22608F5A00208113 /* SomeObject.swift in Sources */,
 				8CF8737022608B7000208113 /* ViewController.swift in Sources */,
+				8C2F8F7922B28AA100D79CFB /* Person.swift in Sources */,
 				8CF8736E22608B7000208113 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C2F8F7A22B28AA100D79CFB /* Person.swift in Sources */,
 				8CF8739D22608F5A00208113 /* SomeObject.swift in Sources */,
 				8CF8738322608B7200208113 /* TestPlaygroundTests.swift in Sources */,
 			);
@@ -474,7 +479,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W4CF89USC7;
 				INFOPLIST_FILE = TestPlaygroundTests/Info.plist;
@@ -487,7 +491,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestPlayground.app/TestPlayground";
 			};
 			name = Debug;
 		};
@@ -495,7 +498,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W4CF89USC7;
 				INFOPLIST_FILE = TestPlaygroundTests/Info.plist;
@@ -508,7 +510,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestPlayground.app/TestPlayground";
 			};
 			name = Release;
 		};

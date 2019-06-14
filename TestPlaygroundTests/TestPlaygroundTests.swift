@@ -24,16 +24,61 @@ class TestPlaygroundTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func testPerformanceExample() {
-        let someObject = SomeObject(currencyCode: "Hoi")
-        let someObjectWithDecimals = SomeObject(currencyCode: "Hoi2", decimals: 2)
+    func testSomeObject() {
+        let currencyCode = "Hoi"
+        let currencyCode2 = "Hoi2"
         
-        print(someObject)
-        print(String(describing: someObjectWithDecimals))
+        let someObject = SomeObject(currencyCode: currencyCode)
+        let someObjectWithDecimals = SomeObject(currencyCode: currencyCode2, decimals: 2)
         
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        XCTAssertEqual(currencyCode, someObject.code)
+        
+        XCTAssertEqual("SomeObject: \(currencyCode2)", String(describing: someObjectWithDecimals))
+    }
+    
+    func testValidPerson_Success() {
+        let firstName = "Leon"
+        let middleName = ""
+        let lastName = "Liefting"
+        let age = 30
+        do {
+            let person = try Person(firstName: firstName, middleName: middleName, lastName: lastName, age: age)
+
+            print("\(person.firstName) \(person.lastName)")
+            
+            XCTAssertEqual(firstName, person.firstName)
+            XCTAssertEqual(lastName, person.lastName)
+            XCTAssertEqual(age, person.age)
+        } catch ValidationError.invalidFirstName {
+            XCTFail("Should not fail.")
+        } catch ValidationError.invalidLastName {
+            XCTFail("Should not fail.")
+        } catch ValidationError.unborn {
+            XCTFail("Should not fail.")
+        } catch {
+            XCTFail("Should not fail.")
+        }
+    }
+    
+    func testUnbornPerson_Fail() {
+        let firstName = "Leon"
+        let middleName = ""
+        let lastName = "Liefting"
+        let age = -7
+        
+        do {
+            // I first put let person = try Person(....) but then it complained about it not being used. Apperently you then replace it by _
+            _ = try Person(firstName: firstName, middleName: middleName, lastName: lastName, age: age)
+            
+            XCTFail("Should have throwed an exception.")
+        } catch ValidationError.invalidFirstName {
+            XCTFail("Should not fail like this.")
+        } catch ValidationError.invalidLastName {
+            XCTFail("Should not fail like this.")
+        } catch ValidationError.unborn {
+            print("You're not supposed to be born yet.")
+        } catch {
+            XCTFail("Should not fail like this.")
         }
     }
 
