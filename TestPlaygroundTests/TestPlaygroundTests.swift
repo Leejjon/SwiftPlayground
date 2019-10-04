@@ -81,5 +81,10 @@ class TestPlaygroundTests: XCTestCase {
             XCTFail("Should not fail like this.")
         }
     }
+    
+    func testEmployedPerson_success() {
+        let person = EmployedPerson(job: Job.engineer)
+        print(person.getSalary())
+    }
 
 }
